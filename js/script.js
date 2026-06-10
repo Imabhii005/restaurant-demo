@@ -699,7 +699,7 @@ function checkoutWhatsApp() {
   let msg = `Hello Braj Royale! 🙏\n\nI'd like to place an order:\n\n`;
   cart.forEach(c => { msg += `• ${c.name} × ${c.qty} — ₹${c.price * c.qty}\n`; });
   msg += `\n*Total: ₹${total}*\n\nPlease confirm my order. Thank you!`;
-  window.open(`https://wa.me/919999988888?text=${encodeURIComponent(msg)}`, '_blank');
+  window.open(`https://wa.me/9111111988888?text=${encodeURIComponent(msg)}`, '_blank');
 }
 
 // ════════════════════════════════════
@@ -719,14 +719,14 @@ function submitReservation() {
   }
 
   const msg = `Hello Braj Royale! 🙏\n\nReservation Request:\n\n👤 Name: ${name}\n📞 Phone: ${phone}\n📅 Date: ${date}\n🕐 Time: ${time}\n👥 Guests: ${guests}${request ? '\n📝 Notes: ' + request : ''}\n\nPlease confirm my reservation. Thank you!`;
-  window.open(`https://wa.me/919999988888?text=${encodeURIComponent(msg)}`, '_blank');
+  window.open(`https://wa.me/9111111988888?text=${encodeURIComponent(msg)}`, '_blank');
 }
 
 // ════════════════════════════════════
 // WHATSAPP
 // ════════════════════════════════════
 function openWhatsApp() {
-  window.open('https://wa.me/919999988888?text=Hello%20Braj%20Royale!%20I%27d%20like%20to%20make%20a%20reservation.%20🙏', '_blank');
+  window.open('https://wa.me/9111111988888?text=Hello%20Braj%20Royale!%20I%27d%20like%20to%20make%20a%20reservation.%20🙏', '_blank');
 }
 
 // ════════════════════════════════════
