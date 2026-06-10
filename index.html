@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Braj Royale — Luxury Spiritual Dining, Vrindavan</title>
+  <meta name="description" content="Braj Royale – A cinematic luxury dining experience rooted in the sacred heart of Vrindavan. Premium vegetarian cuisine, divine ambience, and unforgettable flavours." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Inter:wght@300;400;500;600&family=Cinzel:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════
+     LUXURY LOADING SCREEN
+═══════════════════════════════════════════ -->
+<div id="loader" class="loader">
+  <div class="loader-bg"></div>
+  <div class="loader-content">
+    <div class="loader-emblem">
+      <svg viewBox="0 0 120 120" class="loader-crown">
+        <defs>
+          <radialGradient id="goldGrad" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#FFD700"/>
+            <stop offset="50%" stop-color="#C9920A"/>
+            <stop offset="100%" stop-color="#8B6914"/>
+          </radialGradient>
+        </defs>
+        <path d="M60 10 L70 40 L100 30 L80 55 L110 65 L80 70 L90 100 L60 80 L30 100 L40 70 L10 65 L40 55 L20 30 L50 40 Z" fill="url(#goldGrad)" opacity="0.9"/>
+        <circle cx="60" cy="60" r="18" fill="none" stroke="url(#goldGrad)" stroke-width="1.5"/>
+        <circle cx="60" cy="60" r="8" fill="url(#goldGrad)" opacity="0.7"/>
+      </svg>
+    </div>
+    <div class="loader-logo-text">
+      <span class="loader-braj">BRAJ</span>
+      <span class="loader-royale">ROYALE</span>
+    </div>
+    <div class="loader-tagline">Vrindavan · Est. 2019</div>
+    <div class="loader-bar-wrap"><div class="loader-bar"></div></div>
+    <div class="loader-percent">0%</div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     CURSOR
+═══════════════════════════════════════════ -->
+<div id="cursor" class="cursor"></div>
+<div id="cursor-follower" class="cursor-follower"></div>
+
+<!-- ═══════════════════════════════════════════
+     NAVIGATION
+═══════════════════════════════════════════ -->
+<nav id="navbar" class="navbar">
+  <div class="nav-inner">
+    <a href="#hero" class="nav-logo">
+      <span class="nav-logo-braj">BRAJ</span>
+      <span class="nav-logo-royale">ROYALE</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#menu">Menu</a></li>
+      <li><a href="#builder">Builder</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#reviews">Reviews</a></li>
+      <li><a href="#reservation" class="nav-cta">Reserve Table</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <ul>
+    <li><a href="#experience" onclick="closeMobileMenu()">Experience</a></li>
+    <li><a href="#menu" onclick="closeMobileMenu()">Menu</a></li>
+    <li><a href="#builder" onclick="closeMobileMenu()">Builder</a></li>
+    <li><a href="#gallery" onclick="closeMobileMenu()">Gallery</a></li>
+    <li><a href="#reviews" onclick="closeMobileMenu()">Reviews</a></li>
+    <li><a href="#reservation" onclick="closeMobileMenu()">Reserve Table</a></li>
+  </ul>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     HERO — CINEMATIC INTRO
+═══════════════════════════════════════════ -->
+<section id="hero" class="hero">
+  <canvas id="particleCanvas" class="particle-canvas"></canvas>
+  <div class="hero-bg">
+    <div class="hero-aurora aurora-1"></div>
+    <div class="hero-aurora aurora-2"></div>
+    <div class="hero-aurora aurora-3"></div>
+  </div>
+
+  <!-- Scene 1: Logo Reveal -->
+  <div class="hero-scene scene-1" id="heroScene1">
+    <div class="scene1-emblem">
+      <div class="emblem-ring ring-outer"></div>
+      <div class="emblem-ring ring-mid"></div>
+      <div class="emblem-ring ring-inner"></div>
+      <div class="emblem-icon">
+        <svg viewBox="0 0 80 80" width="60" height="60">
+          <path d="M40 5 L47 28 L72 20 L55 38 L78 47 L55 50 L62 73 L40 58 L18 73 L25 50 L2 47 L25 38 L8 20 L33 28 Z" fill="none" stroke="#C9920A" stroke-width="1.5" opacity="0.8"/>
+          <circle cx="40" cy="40" r="12" fill="none" stroke="#FFD700" stroke-width="1"/>
+          <circle cx="40" cy="40" r="5" fill="#C9920A" opacity="0.9"/>
+        </svg>
+      </div>
+    </div>
+    <div class="scene1-wordmark">
+      <div class="wm-line"></div>
+      <div class="wm-text">
+        <span class="wm-braj">BRAJ</span>
+        <span class="wm-separator">✦</span>
+        <span class="wm-royale">ROYALE</span>
+      </div>
+      <div class="wm-line"></div>
+    </div>
+    <p class="scene1-origin">Vrindavan, India</p>
+  </div>
+
+  <!-- Scene 2–4: Main Hero Content -->
+  <div class="hero-main" id="heroMain">
+    <div class="hero-label">A Culinary Pilgrimage</div>
+    <h1 class="hero-headline">
+      <span class="hero-h-line1">Where the</span>
+      <span class="hero-h-line2 gold-text">Sacred</span>
+      <span class="hero-h-line3">Meets the</span>
+      <span class="hero-h-line4 gold-text">Sublime</span>
+    </h1>
+    <p class="hero-sub">
+      In the holy lanes of Vrindavan, we've crafted a dining experience that honors<br/>
+      the divine essence of Braj while elevating every bite to an art form.
+    </p>
+    <div class="hero-ctas">
+      <a href="#reservation" class="btn-gold">Reserve Your Table</a>
+      <a href="#menu" class="btn-ghost">Explore Menu</a>
+    </div>
+    <div class="hero-stats">
+      <div class="hstat"><span class="hstat-num">12+</span><span class="hstat-lbl">Years of Devotion</span></div>
+      <div class="hstat-divider"></div>
+      <div class="hstat"><span class="hstat-num">200+</span><span class="hstat-lbl">Dishes Crafted</span></div>
+      <div class="hstat-divider"></div>
+      <div class="hstat"><span class="hstat-num">50K+</span><span class="hstat-lbl">Souls Nourished</span></div>
+    </div>
+  </div>
+
+  <!-- Scene 4: Floating Reservation Card -->
+  <div class="hero-reservation-card glass-card" id="heroResCard">
+    <div class="hrc-header">
+      <span class="hrc-label">Quick Reservation</span>
+      <span class="hrc-dot"></span>
+    </div>
+    <div class="hrc-inputs">
+      <div class="hrc-field">
+        <label>Date</label>
+        <input type="date" id="heroDate" />
+      </div>
+      <div class="hrc-field">
+        <label>Guests</label>
+        <select>
+          <option>2 Guests</option>
+          <option>4 Guests</option>
+          <option>6 Guests</option>
+          <option>8+ Guests</option>
+        </select>
+      </div>
+    </div>
+    <button class="hrc-btn" onclick="openWhatsApp()">Book on WhatsApp</button>
+  </div>
+
+  <div class="hero-scroll-hint">
+    <div class="scroll-orb"></div>
+    <span>Scroll to Explore</span>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     EXPERIENCE SECTION
+═══════════════════════════════════════════ -->
+<section id="experience" class="experience-section">
+  <div class="container">
+    <div class="section-eyebrow">Our Philosophy</div>
+    <h2 class="section-title">The Braj <span class="gold-text">Experience</span></h2>
+    <p class="section-sub">Every element — the spice, the light, the silence — is chosen to create a moment of pure presence.</p>
+
+    <div class="exp-grid">
+      <div class="exp-card glass-card reveal-up">
+        <div class="exp-icon">🪔</div>
+        <h3>Divine Ingredients</h3>
+        <p>Sourced from the sacred Braj region — pure, fresh, and infused with centuries of culinary tradition.</p>
+      </div>
+      <div class="exp-card glass-card reveal-up" style="--delay:0.15s">
+        <div class="exp-icon">👨‍🍳</div>
+        <h3>Master Chefs</h3>
+        <p>Our head chefs have trained in Michelin-starred kitchens, bringing global technique to sacred recipes.</p>
+      </div>
+      <div class="exp-card glass-card reveal-up" style="--delay:0.3s">
+        <div class="exp-icon">✨</div>
+        <h3>Elevated Ambience</h3>
+        <p>Warm gold light, temple motifs, and flowing water — a sanctuary designed for the senses.</p>
+      </div>
+      <div class="exp-card glass-card reveal-up" style="--delay:0.45s">
+        <div class="exp-icon">🌺</div>
+        <h3>Seasonal Menus</h3>
+        <p>Every season brings new creations celebrating the festivals and harvests of the Braj calendar.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     MENU SECTION
+═══════════════════════════════════════════ -->
+<section id="menu" class="menu-section">
+  <div class="container">
+    <div class="section-eyebrow">Culinary Journey</div>
+    <h2 class="section-title">Our <span class="gold-text">Menu</span></h2>
+    <p class="section-sub">30+ premium creations — each one a story told through flavour.</p>
+
+    <!-- Category Filters -->
+    <div class="menu-filters" id="menuFilters">
+      <button class="filter-btn active" data-cat="all">All</button>
+      <button class="filter-btn" data-cat="pizza">Pizza</button>
+      <button class="filter-btn" data-cat="burger">Burger</button>
+      <button class="filter-btn" data-cat="pasta">Pasta</button>
+      <button class="filter-btn" data-cat="sandwich">Sandwich</button>
+      <button class="filter-btn" data-cat="thali">Thali</button>
+      <button class="filter-btn" data-cat="southindian">South Indian</button>
+      <button class="filter-btn" data-cat="chinese">Chinese</button>
+      <button class="filter-btn" data-cat="dessert">Desserts</button>
+      <button class="filter-btn" data-cat="beverage">Beverages</button>
+    </div>
+
+    <!-- Menu Grid -->
+    <div class="menu-grid" id="menuGrid"></div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     INTERACTIVE BUILDER SECTION
+═══════════════════════════════════════════ -->
+<section id="builder" class="builder-section">
+  <div class="container">
+    <div class="section-eyebrow">Craft Your Creation</div>
+    <h2 class="section-title">Interactive <span class="gold-text">Builder</span></h2>
+    <p class="section-sub">Customize your perfect dish. Watch it come alive.</p>
+
+    <!-- Builder Toggle -->
+    <div class="builder-toggle">
+      <button class="btoggle active" id="pizzaToggle" onclick="switchBuilder('pizza')">🍕 Pizza Builder</button>
+      <button class="btoggle" id="burgerToggle" onclick="switchBuilder('burger')">🍔 Burger Builder</button>
+    </div>
+
+    <!-- ── PIZZA BUILDER ── -->
+    <div class="builder-wrap" id="pizzaBuilder">
+      <div class="builder-preview">
+        <div class="pizza-stage">
+          <div class="pizza-base" id="pizzaBase">
+            <div class="pizza-sauce" id="pizzaSauce"></div>
+            <div class="pizza-cheese-base"></div>
+            <!-- Toppings rendered by JS -->
+            <div id="pizzaToppings" class="pizza-toppings-layer"></div>
+          </div>
+          <div class="pizza-glow"></div>
+        </div>
+        <div class="builder-price-box glass-card">
+          <span class="bp-label">Total</span>
+          <span class="bp-price" id="pizzaPrice">₹249</span>
+          <button class="btn-gold btn-sm" onclick="addToCartPizza()">Add to Order</button>
+        </div>
+      </div>
+
+      <div class="builder-controls">
+        <div class="bc-section">
+          <h4>Choose Base</h4>
+          <div class="bc-options">
+            <button class="bc-opt active" onclick="selectBase(this,'thin')">Thin Crust</button>
+            <button class="bc-opt" onclick="selectBase(this,'thick')">Thick Crust</button>
+            <button class="bc-opt" onclick="selectBase(this,'cheese')">Cheese Burst</button>
+          </div>
+        </div>
+        <div class="bc-section">
+          <h4>Add Toppings</h4>
+          <div class="bc-toppings" id="pizzaToppingBtns">
+            <button class="topping-btn" data-topping="cheese" onclick="addPizzaTopping(this)">
+              <span class="tb-emoji">🧀</span><span>Extra Cheese</span><span class="tb-price">+₹40</span>
+            </button>
+            <button class="topping-btn" data-topping="paneer" onclick="addPizzaTopping(this)">
+              <span class="tb-emoji">🥛</span><span>Paneer</span><span class="tb-price">+₹50</span>
+            </button>
+            <button class="topping-btn" data-topping="mushroom" onclick="addPizzaTopping(this)">
+              <span class="tb-emoji">🍄</span><span>Mushroom</span><span class="tb-price">+₹35</span>
+            </button>
+            <button class="topping-btn" data-topping="olives" onclick="addPizzaTopping(this)">
+              <span class="tb-emoji">🫒</span><span>Olives</span><span class="tb-price">+₹30</span>
+            </button>
+            <button class="topping-btn" data-topping="corn" onclick="addPizzaTopping(this)">
+              <span class="tb-emoji">🌽</span><span>Corn</span><span class="tb-price">+₹25</span>
+            </button>
+            <button class="topping-btn" data-topping="capsicum" onclick="addPizzaTopping(this)">
+              <span class="tb-emoji">🫑</span><span>Capsicum</span><span class="tb-price">+₹25</span>
+            </button>
+            <button class="topping-btn" data-topping="jalapeno" onclick="addPizzaTopping(this)">
+              <span class="tb-emoji">🌶️</span><span>Jalapeño</span><span class="tb-price">+₹30</span>
+            </button>
+            <button class="topping-btn" data-topping="onion" onclick="addPizzaTopping(this)">
+              <span class="tb-emoji">🧅</span><span>Onion</span><span class="tb-price">+₹20</span>
+            </button>
+            <button class="topping-btn" data-topping="tomato" onclick="addPizzaTopping(this)">
+              <span class="tb-emoji">🍅</span><span>Tomato</span><span class="tb-price">+₹20</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── BURGER BUILDER ── -->
+    <div class="builder-wrap hidden" id="burgerBuilder">
+      <div class="builder-preview">
+        <div class="burger-stage">
+          <div id="burgerStack" class="burger-stack"></div>
+        </div>
+        <div class="builder-price-box glass-card">
+          <span class="bp-label">Total</span>
+          <span class="bp-price" id="burgerPrice">₹199</span>
+          <button class="btn-gold btn-sm" onclick="addToCartBurger()">Add to Order</button>
+        </div>
+      </div>
+      <div class="builder-controls">
+        <div class="bc-section">
+          <h4>Burger Layers</h4>
+          <p class="bc-hint">Click to add/remove layers — watch them stack!</p>
+          <div class="bc-toppings" id="burgerLayerBtns">
+            <button class="topping-btn active" data-layer="bun-top" disabled>
+              <span class="tb-emoji">🍞</span><span>Top Bun</span><span class="tb-price">Included</span>
+            </button>
+            <button class="topping-btn active" data-layer="patty" onclick="toggleBurgerLayer(this)">
+              <span class="tb-emoji">🥩</span><span>Paneer Patty</span><span class="tb-price">+₹60</span>
+            </button>
+            <button class="topping-btn" data-layer="cheese" onclick="toggleBurgerLayer(this)">
+              <span class="tb-emoji">🧀</span><span>Cheese Slice</span><span class="tb-price">+₹30</span>
+            </button>
+            <button class="topping-btn" data-layer="tomato" onclick="toggleBurgerLayer(this)">
+              <span class="tb-emoji">🍅</span><span>Tomato</span><span class="tb-price">+₹15</span>
+            </button>
+            <button class="topping-btn" data-layer="onion" onclick="toggleBurgerLayer(this)">
+              <span class="tb-emoji">🧅</span><span>Onion Rings</span><span class="tb-price">+₹15</span>
+            </button>
+            <button class="topping-btn" data-layer="sauce" onclick="toggleBurgerLayer(this)">
+              <span class="tb-emoji">🫙</span><span>Special Sauce</span><span class="tb-price">+₹20</span>
+            </button>
+            <button class="topping-btn" data-layer="lettuce" onclick="toggleBurgerLayer(this)">
+              <span class="tb-emoji">🥬</span><span>Lettuce</span><span class="tb-price">+₹10</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     GALLERY
+═══════════════════════════════════════════ -->
+<section id="gallery" class="gallery-section">
+  <div class="container">
+    <div class="section-eyebrow">Visual Feast</div>
+    <h2 class="section-title">Gallery</h2>
+    <p class="section-sub">A window into the Braj Royale world.</p>
+    <div class="gallery-masonry" id="galleryGrid"></div>
+  </div>
+</section>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <button class="lb-close" onclick="closeLightbox()">✕</button>
+  <img id="lbImg" src="" alt="" />
+  <p id="lbCaption" class="lb-caption"></p>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     REVIEWS
+═══════════════════════════════════════════ -->
+<section id="reviews" class="reviews-section">
+  <div class="container">
+    <div class="section-eyebrow">Guest Stories</div>
+    <h2 class="section-title">What Our <span class="gold-text">Guests</span> Say</h2>
+    <div class="reviews-track-wrap">
+      <div class="reviews-track" id="reviewsTrack"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     RESERVATION SECTION
+═══════════════════════════════════════════ -->
+<section id="reservation" class="reservation-section">
+  <div class="container">
+    <div class="res-inner">
+      <div class="res-left">
+        <div class="section-eyebrow">Join Us</div>
+        <h2 class="section-title">Reserve Your<br/><span class="gold-text">Sacred Table</span></h2>
+        <p>Experience a meal that transcends the ordinary. Book your table at Braj Royale and let us take you on a journey through the divine flavours of Vrindavan.</p>
+        <div class="res-info">
+          <div class="ri-item">
+            <span class="ri-icon">📍</span>
+            <span>Parikrama Marg, Near Prem Mandir,<br/>Vrindavan, UP 281121</span>
+          </div>
+          <div class="ri-item">
+            <span class="ri-icon">🕐</span>
+            <span>Daily: 8:00 AM – 10:30 PM</span>
+          </div>
+          <div class="ri-item">
+            <span class="ri-icon">📞</span>
+            <span>+91 99999 88888</span>
+          </div>
+        </div>
+      </div>
+      <div class="res-right">
+        <div class="res-form glass-card">
+          <h3>Book a Table</h3>
+          <div class="rf-field">
+            <label>Full Name</label>
+            <input type="text" id="resName" placeholder="Your name" />
+          </div>
+          <div class="rf-field">
+            <label>Phone Number</label>
+            <input type="tel" id="resPhone" placeholder="+91 XXXXX XXXXX" />
+          </div>
+          <div class="rf-row">
+            <div class="rf-field">
+              <label>Date</label>
+              <input type="date" id="resDate" />
+            </div>
+            <div class="rf-field">
+              <label>Time</label>
+              <select id="resTime">
+                <option>12:00 PM</option>
+                <option>1:00 PM</option>
+                <option>2:00 PM</option>
+                <option>7:00 PM</option>
+                <option>8:00 PM</option>
+                <option>9:00 PM</option>
+              </select>
+            </div>
+          </div>
+          <div class="rf-field">
+            <label>Number of Guests</label>
+            <select id="resGuests">
+              <option>1 Guest</option>
+              <option selected>2 Guests</option>
+              <option>3 Guests</option>
+              <option>4 Guests</option>
+              <option>6 Guests</option>
+              <option>8 Guests</option>
+              <option>10+ Guests (Special Event)</option>
+            </select>
+          </div>
+          <div class="rf-field">
+            <label>Special Request</label>
+            <textarea id="resRequest" placeholder="Anniversary setup, dietary needs, etc." rows="2"></textarea>
+          </div>
+          <button class="btn-gold full-width" onclick="submitReservation()">
+            Confirm via WhatsApp 💬
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     FOOTER
+═══════════════════════════════════════════ -->
+<footer class="footer">
+  <div class="footer-glow"></div>
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <span class="nav-logo-braj">BRAJ</span>
+          <span class="nav-logo-royale">ROYALE</span>
+        </div>
+        <p>A luxury spiritual dining experience in the heart of Vrindavan. Pure. Elevated. Divine.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Instagram">📷</a>
+          <a href="#" aria-label="Facebook">📘</a>
+          <a href="#" aria-label="YouTube">▶️</a>
+          <a href="#" aria-label="WhatsApp" onclick="openWhatsApp()">💬</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="#experience">Our Philosophy</a></li>
+          <li><a href="#menu">Menu</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#reservation">Reservations</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Cuisine</h4>
+        <ul>
+          <li><a href="#">Braj Special Thali</a></li>
+          <li><a href="#">Italian Classics</a></li>
+          <li><a href="#">Asian Wok</a></li>
+          <li><a href="#">Royal Desserts</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Visit Us</h4>
+        <ul>
+          <li>Near Prem Mandir</li>
+          <li>Vrindavan, UP 281121</li>
+          <li>+91 99999 88888</li>
+          <li>reservations@brajroyale.in</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Braj Royale. All rights reserved. Made with ✦ in Vrindavan.</p>
+      <p>Privacy Policy · Terms · Sitemap</p>
+    </div>
+  </div>
+</footer>
+
+<!-- Toast Notification -->
+<div class="toast" id="toast"></div>
+
+<!-- Cart Sidebar -->
+<div class="cart-badge" id="cartBadge" onclick="toggleCart()">
+  🛒 <span id="cartCount">0</span>
+</div>
+<div class="cart-sidebar glass-card" id="cartSidebar">
+  <div class="cs-header">
+    <h3>Your Order</h3>
+    <button onclick="toggleCart()">✕</button>
+  </div>
+  <div class="cs-items" id="cartItems"><p class="cs-empty">Your cart is empty</p></div>
+  <div class="cs-footer">
+    <div class="cs-total">Total: <span id="cartTotal">₹0</span></div>
+    <button class="btn-gold full-width" onclick="checkoutWhatsApp()">Order on WhatsApp</button>
+  </div>
+</div>
+
+<script src="js/script.js"></script>
+</body>
+</html>
